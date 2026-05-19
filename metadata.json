@@ -1,0 +1,6 @@
+{
+  "name": "Granallado Profesional",
+  "description": "Servicio experto de granallado para la limpieza y restauración de superficies industriales y maquinaria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

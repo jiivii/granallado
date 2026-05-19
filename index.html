@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granallado Profesional | Restauración de Superficies</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #f59e0b;
+            --accent-hover: #d97706;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-alternate: #f1f5f9;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1541933224312-0548ca6bad8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 70px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* --- Common Section Styles --- */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        /* --- About Section --- */
+        #sobre-el-servicio {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* --- Steps Section --- */
+        #como-funciona {
+            background-color: var(--bg-alternate);
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .step i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* --- Before & After --- */
+        #antes-despues {
+            background-color: var(--white);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison {
+            display: flex;
+            width: 100%;
+        }
+
+        .comparison-img {
+            width: 50%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .label {
+            position: absolute;
+            bottom: 10px;
+            padding: 5px 12px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .label-antes { left: 10px; }
+        .label-despues { right: 10px; }
+
+        /* --- Video Section --- */
+        #video-servicio {
+            background-color: var(--bg-light);
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- Testimonials --- */
+        #testimonios {
+            background-color: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* --- FAQ Accordion --- */
+        #faq {
+            background-color: var(--bg-alternate);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            background: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: var(--white);
+        }
+
+        .faq-answer p {
+            padding: 1.5rem;
+            padding-top: 0;
+            color: var(--text-light);
+        }
+
+        /* --- Contact Form --- */
+        #contacto {
+            background-color: var(--bg-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        .error-message {
+            color: #e53e3e;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #c6f6d5;
+            color: #276749;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* --- Responsive Queries --- */
+        @media (max-width: 992px) {
+            .about-content, .contact-grid, .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                text-align: center;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .card-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-tools"></i> GRANALLADO PRO
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#sobre-el-servicio">Servicios</a></li>
+                    <li><a href="#como-funciona">Proceso</a></li>
+                    <li><a href="#antes-despues">Trabajos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="hero">
+            <div class="container hero-content">
+                <h1 class="reveal">Limpieza y Restauración Industrial</h1>
+                <p class="reveal">Especialistas en granallado a domicilio: eliminación de óxido, residuos y preparación de superficies con tecnología de vanguardia.</p>
+                <a href="#contacto" class="btn reveal">Solicitar Información</a>
+            </div>
+        </section>
+
+        <!-- Sobre el servicio -->
+        <section id="sobre-el-servicio">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Nuestra Solución Profesional</h2>
+                    <p>Poder industrial aplicado a la recuperación de sus activos</p>
+                </div>
+                
+                <div class="about-content reveal">
+                    <div class="about-text">
+                        <p>El granallado es la técnica de tratamiento superficial más eficiente para limpiar, fortalecer o pulir superficies metálicas. Mediante la proyección de partículas abrasivas a alta velocidad, logramos eliminar hasta el residuo más persistente sin comprometer la integridad de la pieza.</p>
+                        <p>Nuestro equipo a domicilio está perfectamente equipado para intervenir en maquinaria pesada, estructuras fijas y superficies de gran formato, garantizando un acabado anclaje perfecto para futuras capas de pintura o recubrimientos protectores.</p>
+                        <p>Nos adaptamos a las necesidades de su industria, minimizando los tiempos de inactividad con procesos rápidos, limpios y altamente controlados que cumplen con los estándares internacionales de preparación de superficies.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="Maquinaria Industrial" style="width:100%; border-radius:15px; box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card reveal">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Eliminación de Óxido</h3>
+                        <p>Limpieza profunda de corrosión y capas de pintura vieja en cualquier metal.</p>
+                    </div>
+                    <div class="card reveal">
+                        <i class="fas fa-fill-drip"></i>
+                        <h3>Preparación Ideal</h3>
+                        <p>Generamos el perfil de rugosidad necesario para garantizar la adherencia de pintura.</p>
+                    </div>
+                    <div class="card reveal">
+                        <i class="fas fa-truck"></i>
+                        <h3>Servicio in situ</h3>
+                        <p>Nos desplazamos a su planta o taller para evitar el traslado de piezas pesadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo funciona -->
+        <section id="como-funciona">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Nuestro Método</h2>
+                    <p>Un proceso estructurado para resultados impecables</p>
+                </div>
+
+                <div class="steps-container reveal">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <i class="fas fa-search"></i>
+                        <h3>Análisis Tecnico</h3>
+                        <p>Evaluamos el tipo de superficie y el grado de contaminación para elegir el abrasivo ideal.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <i class="fas fa-mask"></i>
+                        <h3>Protección</h3>
+                        <p>Aislamos y protegemos las zonas delicadas y componentes mecánicos que no requieren tratamiento.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <i class="fas fa-wind"></i>
+                        <h3>Granallado</h3>
+                        <p>Ejecutamos la proyección controlada hasta obtener el grado de limpieza solicitado (SA 2.5/3).</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <i class="fas fa-check-double"></i>
+                        <h3>Inspección</h3>
+                        <p>Verificamos la uniformidad y entregamos la superficie lista para su tratamiento final.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Antes y Despues -->
+        <section id="antes-despues">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Garantía de Resultados</h2>
+                    <p>Transformación real en proyectos industriales recientes</p>
+                </div>
+
+                <div class="gallery">
+                    <div class="gallery-item reveal">
+                        <div class="comparison">
+                            <div class="comparison-img">
+                                <span class="label label-antes">Antes</span>
+                                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=400&auto=format&fit=crop" alt="Antes">
+                            </div>
+                            <div class="comparison-img">
+                                <span class="label label-despues">Después</span>
+                                <img src="https://images.unsplash.com/photo-1534398079244-67c8ad691acc?q=80&w=400&auto=format&fit=crop" alt="Despues">
+                            </div>
+                        </div>
+                        <div style="padding:1rem; background: var(--bg-light); text-align:center;">
+                            <h4 style="color:var(--primary)">Maquinaria de Cantera</h4>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <div class="comparison">
+                            <div class="comparison-img">
+                                <span class="label label-antes">Antes</span>
+                                <img src="https://images.unsplash.com/photo-1589793907316-f94025b46850?q=80&w=400&auto=format&fit=crop" alt="Antes">
+                            </div>
+                            <div class="comparison-img">
+                                <span class="label label-despues">Después</span>
+                                <img src="https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=400&auto=format&fit=crop" alt="Despues">
+                            </div>
+                        </div>
+                        <div style="padding:1rem; background: var(--bg-light); text-align:center;">
+                            <h4 style="color:var(--primary)">Depósito Metálico</h4>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <div class="comparison">
+                            <div class="comparison-img">
+                                <span class="label label-antes">Antes</span>
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop" alt="Antes">
+                            </div>
+                            <div class="comparison-img">
+                                <span class="label label-despues">Después</span>
+                                <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400&auto=format&fit=crop" alt="Despues">
+                            </div>
+                        </div>
+                        <div style="padding:1rem; background: var(--bg-light); text-align:center;">
+                            <h4 style="color:var(--primary)">Vigas Estructurales</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video -->
+        <section id="video-servicio">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Vea la eficacia en acción</h2>
+                    <p>Un vistazo rápido a nuestro equipo trabajando en campo</p>
+                </div>
+                <div class="video-container reveal">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Granallado" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section id="testimonios">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Opiniones de Clientes</h2>
+                    <p>La confianza de la industria nos avala</p>
+                </div>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card reveal">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Increíble rapidez. Teníamos una flota de camiones con mucho óxido y en 48 horas el equipo de Granallado Pro los dejó como nuevos."</p>
+                        <p class="testimonial-author">Ing. Manuel Torres</p>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"La limpieza SA 3 que lograron en nuestros tanques de almacenamiento fue perfecta. La pintura posterior se adhirió sin problemas."</p>
+                        <p class="testimonial-author">Lucía García - Gerente de Planta</p>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Profesionalidad absoluta. No ensucian nada del entorno gracias a sus sistemas de aspiración. Muy recomendables para naves industriales."</p>
+                        <p class="testimonial-author">Roberto Méndez</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Resolvemos sus dudas técnicas sobre el proceso</p>
+                </div>
+
+                <div class="faq-container reveal">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Qué materiales se pueden tratar con granallado?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Principalmente metales (hierro, acero, aluminio), pero también podemos tratar hormigón para abrir el poro o madera para efectos rústicos, adaptando siempre la presión y el tipo de granalla.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Afecta el granallado a las dimensiones de la pieza?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El granallado elimina micras de material (óxido, pintura, cascarilla de laminación). No altera las dimensiones críticas de la maquinaria, aunque en piezas de precisión extrema protegemos las tolerancias mecánicas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Cuánto tiempo se tarda en realizar el servicio?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Depende de la superficie y del estado inicial. Una superficie medianamente oxidada de 50m² puede estar lista en una jornada de trabajo completa.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Es un proceso muy sucio?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Utilizamos equipos de aspiración de polvo integrados y sistemas de confinamiento portátiles que minimizan la dispersión de residuos en su planta.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Se puede realizar en exteriores?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, es un servicio ideal para exteriores siempre que las condiciones climáticas (viento excesivo o lluvia) permitan trabajar con seguridad y sin humedecer el metal recién limpiado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Solicite Presupuesto Gratis</h2>
+                    <p>Contáctenos hoy mismo y reciba una valoración sin compromiso</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <h3>Información de Contacto</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación:</strong>
+                                <p>Calle Industrial 45, Polígono Nord, Madrid</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Teléfono:</strong>
+                                <p>+34 912 345 678</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong>
+                                <p>info@granalladopro.es</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links" style="margin-top: 3rem;">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form reveal">
+                        <form id="mainForm">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Teléfono *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="600 000 000">
+                                    <span class="error-message">Introduzca un teléfono válido</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <span class="error-message">Introduzca un email válido</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="place">Ciudad / Código Postal *</label>
+                                <input type="text" id="place" name="place" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="how">¿Cómo nos conoció?</label>
+                                <select id="how" name="how">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="google">Google / Búsqueda</option>
+                                    <option value="rrss">Redes Sociales</option>
+                                    <option value="friend">Recomendación</option>
+                                    <option value="ad">Publicidad</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Detalle su proyecto *</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Describa el tipo de superficie, tamaño aproximado..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
+                        </form>
+                        <div class="success-message" id="successBox">
+                            <i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Nos pondremos en contacto con usted en menos de 24h.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo"><i class="fas fa-tools"></i> GRANALLADO PRO</h3>
+                    <p>Expertos en tratamiento de superficies industriales con más de 15 años de experiencia en el sector. Compromiso, calidad y rapidez.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Directorio</h4>
+                    <ul>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#sobre-el-servicio">Servicios</a></li>
+                        <li><a href="#como-funciona">El Proceso</a></li>
+                        <li><a href="#antes-despues">Trabajos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GranalladoPro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // --- Reveal on Scroll Animation ---
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- FAQ Accordion Logic ---
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all other answers
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.style.maxHeight = null;
+                });
+                
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // --- Contact Form Validation & Submission ---
+        const form = document.getElementById('mainForm');
+        const successBox = document.getElementById('successBox');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            let isValid = true;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[6789]\d{8}$/; // Spanish mobile/landline simplified
+
+            // Simple validation feedback logic
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            inputs.forEach(input => {
+                const error = input.nextElementSibling;
+                if (!input.value.trim()) {
+                    showError(input, true);
+                    isValid = false;
+                } else if (input.type === 'email' && !emailRegex.test(input.value)) {
+                    showError(input, true);
+                    isValid = false;
+                } else if (input.type === 'tel' && !phoneRegex.test(input.value.replace(/\s/g, ''))) {
+                    showError(input, true);
+                    isValid = false;
+                } else {
+                    showError(input, false);
+                }
+            });
+
+            if (isValid) {
+                // Mimic success
+                form.style.display = 'none';
+                successBox.style.display = 'block';
+                
+                console.log('Form Submitted:', {
+                    name: form.name.value,
+                    email: form.email.value,
+                    phone: form.phone.value,
+                    message: form.message.value
+                });
+            }
+        });
+
+        function showError(element, show) {
+            const errorMsg = element.parentElement.querySelector('.error-message');
+            if (errorMsg) {
+                errorMsg.style.display = show ? 'block' : 'none';
+                element.style.borderColor = show ? '#e53e3e' : '#e2e8f0';
+            }
+        }
+    </script>
+</body>
+</html>
+
