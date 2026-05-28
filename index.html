@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Granallado Profesional | Restauración de Superficies</title>
-
+    <title>LaserGP | Limpieza y Eliminación de Óxido por Láser</title>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary: #1a365d;
-            --primary-light: #2c5282;
-            --accent: #f59e0b;
-            --accent-hover: #d97706;
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #dc2626;
+            --accent-hover: #b91c1c;
             --text-dark: #1f2937;
             --text-light: #4b5563;
             --white: #ffffff;
@@ -134,8 +133,8 @@
         /* --- Hero Section --- */
         #hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1541933224312-0548ca6bad8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1541933224312-0548ca6bad8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -356,13 +355,8 @@
             font-weight: 600;
         }
 
-        .label-antes {
-            left: 10px;
-        }
-
-        .label-despues {
-            right: 10px;
-        }
+        .label-antes { left: 10px; }
+        .label-despues { right: 10px; }
 
         /* --- Video Section --- */
         #video-servicio {
@@ -373,8 +367,7 @@
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            padding-bottom: 56.25%;
-            /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             border-radius: 15px;
             overflow: hidden;
@@ -534,9 +527,7 @@
             font-size: 0.9rem;
         }
 
-        input,
-        select,
-        textarea {
+        input, select, textarea {
             width: 100%;
             padding: 0.75rem;
             border: 1px solid #e2e8f0;
@@ -546,9 +537,7 @@
             transition: var(--transition);
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent);
             box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
@@ -641,17 +630,14 @@
 
         /* --- Responsive Queries --- */
         @media (max-width: 992px) {
-
-            .about-content,
-            .contact-grid,
-            .footer-content {
+            .about-content, .contact-grid, .footer-content {
                 grid-template-columns: 1fr;
             }
-
+            
             .testimonial-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -684,8 +670,7 @@
                 gap: 3rem;
             }
 
-            .card-grid,
-            .testimonial-grid {
+            .card-grid, .testimonial-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -697,17 +682,225 @@
                 font-size: 2rem;
             }
         }
+
+        /* --- Contact Social Pills (Discreet) --- */
+        .contact-social-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .social-pill-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .social-indicator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .social-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--white);
+            border: 1px solid #e2e8f0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .social-pill i {
+            font-size: 1.1rem;
+            width: 18px;
+            text-align: center;
+        }
+
+        .social-pill.whatsapp i { color: #25D366; }
+        .social-pill.linkedin i { color: #0A66C2; }
+        .social-pill.instagram i { color: #e1306c; }
+        .social-pill.facebook i { color: #1877F2; }
+
+        .social-pill:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            background-color: var(--bg-light);
+        }
+
+        /* --- Redirection Modal --- */
+        .redirect-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .redirect-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .redirect-modal {
+            background-color: var(--white);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 480px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .redirect-modal-overlay.active .redirect-modal {
+            transform: scale(1);
+        }
+
+        .redirect-icon-container {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: bounce-gentle 2s infinite ease-in-out;
+        }
+
+        @keyframes bounce-gentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .redirect-title {
+            color: var(--primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .redirect-text {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 1.75rem;
+            line-height: 1.5;
+        }
+
+        .redirect-progress {
+            width: 100%;
+            height: 6px;
+            background-color: #f1f5f9;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .redirect-bar {
+            width: 0%;
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        .redirect-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-redirect-direct {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-redirect-direct:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-cancel {
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: 1px solid #cbd5e1;
+            cursor: pointer;
+        }
+
+        .btn-cancel:hover {
+            background-color: #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .floating-social-bar {
+                right: 15px;
+                bottom: 20px;
+                gap: 10px;
+            }
+            .social-float-item {
+                width: 46px;
+                height: 46px;
+            }
+            .social-float-item i {
+                font-size: 1.3rem;
+            }
+            .social-float-item .social-icon-badge {
+                display: none; /* Hide badges on touch to avoid overlapping */
+            }
+        }
     </style>
 </head>
-
 <body>
 
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">
-                    <img src="media/logo.jpeg" alt="Granallado Pro" width="160" height="40" loading="lazy">
-                    <span class="sr-only">GRANALLADO PRO</span>
+                <a href="#" class="logo" style="display: flex; align-items: center;">
+                    <img src="media/logo.png" alt="LaserGP Logo" style="height: 48px; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#hero">Inicio</a></li>
@@ -730,9 +923,8 @@
         <!-- Hero -->
         <section id="hero">
             <div class="container hero-content">
-                <h1 class="reveal">Limpieza y Restauración Industrial</h1>
-                <p class="reveal">Especialistas en granallado a domicilio: eliminación de óxido, residuos y preparación
-                    de superficies con tecnología de vanguardia.</p>
+                <h1 class="reveal">Limpieza Láser Industrial</h1>
+                <p class="reveal">Especialistas en limpieza y desoxidación por láser a domicilio: eliminación precisa de óxido, residuos y preparación de superficies con tecnología de vanguardia.</p>
                 <a href="#contacto" class="btn reveal">Solicitar Información</a>
             </div>
         </section>
@@ -744,24 +936,15 @@
                     <h2>Nuestra Solución Profesional</h2>
                     <p>Poder industrial aplicado a la recuperación de sus activos</p>
                 </div>
-
+                
                 <div class="about-content reveal">
                     <div class="about-text">
-                        <p>El granallado es la técnica de tratamiento superficial más eficiente para limpiar, fortalecer
-                            o pulir superficies metálicas. Mediante la proyección de partículas abrasivas a alta
-                            velocidad, logramos eliminar hasta el residuo más persistente sin comprometer la integridad
-                            de la pieza.</p>
-                        <p>Nuestro equipo a domicilio está perfectamente equipado para intervenir en maquinaria pesada,
-                            estructuras fijas y superficies de gran formato, garantizando un acabado anclaje perfecto
-                            para futuras capas de pintura o recubrimientos protectores.</p>
-                        <p>Nos adaptamos a las necesidades de su industria, minimizando los tiempos de inactividad con
-                            procesos rápidos, limpios y altamente controlados que cumplen con los estándares
-                            internacionales de preparación de superficies.</p>
+                        <p>La limpieza por láser es la técnica de tratamiento superficial más innovadora y ecológica para limpiar y desoxidar superficies metálicas. Mediante impulsos de luz láser de alta frecuencia, logramos eliminar el óxido, la pintura y hasta el residuo más persistente de forma rápida y sin dañar la pieza base.</p>
+                        <p>Nuestro equipo a domicilio está perfectamente equipado para intervenir en maquinaria pesada, estructuras fijas, moldes industriales y superficies de gran formato, garantizando un perfil de anclaje perfecto para futuras capas de pintura o recubrimientos protectores.</p>
+                        <p>Nos adaptamos a las necesidades de su industria, minimizando los tiempos de inactividad con procesos rápidos, limpios (sin arena, polvo ni químicos) y altamente controlados que cumplen con los más estrictos estándares de la tecnología de tratamiento láser.</p>
                     </div>
                     <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
-                            alt="Maquinaria Industrial"
-                            style="width:100%; border-radius:15px; box-shadow: var(--shadow-lg);">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="Maquinaria Industrial" style="width:100%; border-radius:15px; box-shadow: var(--shadow-lg);">
                     </div>
                 </div>
 
@@ -797,23 +980,20 @@
                     <div class="step">
                         <div class="step-number">1</div>
                         <i class="fas fa-search"></i>
-                        <h3>Análisis Tecnico</h3>
-                        <p>Evaluamos el tipo de superficie y el grado de contaminación para elegir el abrasivo ideal.
-                        </p>
+                        <h3>Análisis Técnico</h3>
+                        <p>Evaluamos el tipo de superficie y el grado de contaminación para ajustar los parámetros óptimos del láser.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <i class="fas fa-mask"></i>
                         <h3>Protección</h3>
-                        <p>Aislamos y protegemos las zonas delicadas y componentes mecánicos que no requieren
-                            tratamiento.</p>
+                        <p>Aislamos/tapamos las zonas delicadas comprometidas en la superficie que no necesiten limpieza.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <i class="fas fa-wind"></i>
-                        <h3>Granallado</h3>
-                        <p>Ejecutamos la proyección controlada hasta obtener el grado de limpieza solicitado (SA 2.5/3).
-                        </p>
+                        <i class="fas fa-bolt"></i>
+                        <h3>Limpieza Láser</h3>
+                        <p>Ejecutamos el barrido de alta precisión con tecnología láser, sublimando óxido y depósitos al instante.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
@@ -838,13 +1018,11 @@
                         <div class="comparison">
                             <div class="comparison-img">
                                 <span class="label label-antes">Antes</span>
-                                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=400&auto=format&fit=crop"
-                                    alt="Antes">
+                                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=400&auto=format&fit=crop" alt="Antes">
                             </div>
                             <div class="comparison-img">
                                 <span class="label label-despues">Después</span>
-                                <img src="https://images.unsplash.com/photo-1534398079244-67c8ad691acc?q=80&w=400&auto=format&fit=crop"
-                                    alt="Despues">
+                                <img src="https://images.unsplash.com/photo-1534398079244-67c8ad691acc?q=80&w=400&auto=format&fit=crop" alt="Despues">
                             </div>
                         </div>
                         <div style="padding:1rem; background: var(--bg-light); text-align:center;">
@@ -856,13 +1034,11 @@
                         <div class="comparison">
                             <div class="comparison-img">
                                 <span class="label label-antes">Antes</span>
-                                <img src="https://images.unsplash.com/photo-1589793907316-f94025b46850?q=80&w=400&auto=format&fit=crop"
-                                    alt="Antes">
+                                <img src="https://images.unsplash.com/photo-1589793907316-f94025b46850?q=80&w=400&auto=format&fit=crop" alt="Antes">
                             </div>
                             <div class="comparison-img">
                                 <span class="label label-despues">Después</span>
-                                <img src="https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=400&auto=format&fit=crop"
-                                    alt="Despues">
+                                <img src="https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=400&auto=format&fit=crop" alt="Despues">
                             </div>
                         </div>
                         <div style="padding:1rem; background: var(--bg-light); text-align:center;">
@@ -874,13 +1050,11 @@
                         <div class="comparison">
                             <div class="comparison-img">
                                 <span class="label label-antes">Antes</span>
-                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop"
-                                    alt="Antes">
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop" alt="Antes">
                             </div>
                             <div class="comparison-img">
                                 <span class="label label-despues">Después</span>
-                                <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400&auto=format&fit=crop"
-                                    alt="Despues">
+                                <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400&auto=format&fit=crop" alt="Despues">
                             </div>
                         </div>
                         <div style="padding:1rem; background: var(--bg-light); text-align:center;">
@@ -899,8 +1073,7 @@
                     <p>Un vistazo rápido a nuestro equipo trabajando en campo</p>
                 </div>
                 <div class="video-container reveal">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Granallado"
-                        allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Limpieza Láser" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -912,33 +1085,27 @@
                     <h2>Opiniones de Clientes</h2>
                     <p>La confianza de la industria nos avala</p>
                 </div>
-
+                
                 <div class="testimonial-grid">
                     <div class="testimonial-card reveal">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Increíble rapidez. Teníamos una flota de camiones con mucho óxido y
-                            en 48 horas el equipo de Granallado Pro los dejó como nuevos."</p>
+                        <p class="testimonial-text">"Increíble rapidez. Teníamos piezas mecánicas industriales con mucho óxido y en pocas horas el equipo de LaserGP las dejó como nuevas y listas para montar."</p>
                         <p class="testimonial-author">Ing. Manuel Torres</p>
                     </div>
                     <div class="testimonial-card reveal">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"La limpieza SA 3 que lograron en nuestros tanques de almacenamiento
-                            fue perfecta. La pintura posterior se adhirió sin problemas."</p>
+                        <p class="testimonial-text">"La limpieza de gran precisión que lograron en nuestros moldes de inyección fue perfecta. Sin alterar las tolerancias y sin dejar arena ni polvo en el taller."</p>
                         <p class="testimonial-author">Lucía García - Gerente de Planta</p>
                     </div>
                     <div class="testimonial-card reveal">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         </div>
-                        <p class="testimonial-text">"Profesionalidad absoluta. No ensucian nada del entorno gracias a
-                            sus sistemas de aspiración. Muy recomendables para naves industriales."</p>
+                        <p class="testimonial-text">"Profesionalidad absoluta. No ensucian nada del entorno gracias a sus sistemas de aspiración. Muy recomendables para naves industriales."</p>
                         <p class="testimonial-author">Roberto Méndez</p>
                     </div>
                 </div>
@@ -956,24 +1123,20 @@
                 <div class="faq-container reveal">
                     <div class="faq-item">
                         <button class="faq-question">
-                            ¿Qué materiales se pueden tratar con granallado?
+                            ¿Qué materiales se pueden tratar con limpieza láser?
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Principalmente metales (hierro, acero, aluminio), pero también podemos tratar hormigón
-                                para abrir el poro o madera para efectos rústicos, adaptando siempre la presión y el
-                                tipo de granalla.</p>
+                            <p>Prácticamente cualquier tipo de metal (acero, hierro fundido, aluminio, acero inoxidable, cobre). También es altamente eficaz eliminando óxidos, pinturas, aceites o grasas sin afectar las propiedades de los materiales.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            ¿Afecta el granallado a las dimensiones de la pieza?
+                            ¿Afecta la limpieza láser a las dimensiones de la pieza?
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>El granallado elimina micras de material (óxido, pintura, cascarilla de laminación). No
-                                altera las dimensiones críticas de la maquinaria, aunque en piezas de precisión extrema
-                                protegemos las tolerancias mecánicas.</p>
+                            <p>En absoluto. La limpieza por láser es un proceso sin contacto físico y no abrasivo. Sublima exclusivamente los contaminantes (capas de óxido, pinturas, resinas) sin alterar las dimensiones críticas, las esquinas afiladas ni las tolerancias del metal base.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -982,8 +1145,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Depende de la superficie y del estado inicial. Una superficie medianamente oxidada de
-                                50m² puede estar lista en una jornada de trabajo completa.</p>
+                            <p>Depende de la superficie y del estado inicial. Una superficie medianamente oxidada de 50m² puede estar lista en una jornada de trabajo completa.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -992,8 +1154,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Utilizamos equipos de aspiración de polvo integrados y sistemas de confinamiento
-                                portátiles que minimizan la dispersión de residuos en su planta.</p>
+                            <p>Utilizamos equipos de aspiración de polvo integrados y sistemas de confinamiento portátiles que minimizan la dispersión de residuos en su planta.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -1002,9 +1163,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Sí, es un servicio ideal para exteriores siempre que las condiciones climáticas (viento
-                                excesivo o lluvia) permitan trabajar con seguridad y sin humedecer el metal recién
-                                limpiado.</p>
+                            <p>Sí, es un servicio ideal para exteriores siempre que las condiciones climáticas (viento excesivo o lluvia) permitan trabajar con seguridad y sin humedecer el metal recién limpiado.</p>
                         </div>
                     </div>
                 </div>
@@ -1040,14 +1199,26 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <strong>Email:</strong>
-                                <p>info@granalladopro.es</p>
+                                <p>info@lasergp.es</p>
                             </div>
                         </div>
-
-                        <div class="social-links" style="margin-top: 3rem;">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        
+                        <div class="contact-social-pills">
+                            <h4 class="social-pill-title">Atención Directa y Redes</h4>
+                            <div class="social-indicator-grid">
+                                <a href="javascript:void(0)" onclick="triggerRedirect('WhatsApp', 'https://wa.me/34912345678?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20limpieza%20por%20l%C3%A1ser.')" class="social-pill whatsapp" title="Contactar por WhatsApp">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                                <a href="javascript:void(0)" onclick="triggerRedirect('LinkedIn', 'https://linkedin.com/company/LaserGP')" class="social-pill linkedin" title="LinkedIn Corporativo">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                                <a href="javascript:void(0)" onclick="triggerRedirect('Instagram', 'https://instagram.com/LaserGP')" class="social-pill instagram" title="Instagram Trabajos">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="javascript:void(0)" onclick="triggerRedirect('Facebook', 'https://facebook.com/LaserGP')" class="social-pill facebook" title="Facebook Página">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -1058,7 +1229,7 @@
                                 <input type="text" id="name" name="name" required>
                                 <span class="error-message">Este campo es obligatorio</span>
                             </div>
-
+                            
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="phone">Teléfono *</label>
@@ -1091,15 +1262,13 @@
 
                             <div class="form-group">
                                 <label for="message">Detalle su proyecto *</label>
-                                <textarea id="message" name="message" rows="4" required
-                                    placeholder="Describa el tipo de superficie, tamaño aproximado..."></textarea>
+                                <textarea id="message" name="message" rows="4" required placeholder="Describa el tipo de superficie, tamaño aproximado..."></textarea>
                             </div>
 
                             <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
                         </form>
                         <div class="success-message" id="successBox">
-                            <i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Nos pondremos en contacto
-                            con usted en menos de 24h.
+                            <i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Nos pondremos en contacto con usted en menos de 24h.
                         </div>
                     </div>
                 </div>
@@ -1111,9 +1280,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3 class="footer-logo"><i class="fas fa-tools"></i> GRANALLADO PRO</h3>
-                    <p>Expertos en tratamiento de superficies industriales con más de 15 años de experiencia en el
-                        sector. Compromiso, calidad y rapidez.</p>
+                    <div style="margin-bottom: 1.25rem;">
+                        <img src="media/logo.png" alt="LaserGP Logo" style="height: 48px; width: auto; object-fit: contain; filter: brightness(0) invert(1);" referrerPolicy="no-referrer">
+                    </div>
+                    <p>Expertos en tratamiento y limpieza de superficies con tecnología de limpieza por láser de precisión. Soluciones profesionales, ecológicas y sin residuos dañinos.</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="javascript:void(0)" onclick="triggerRedirect('Facebook', 'https://facebook.com/LaserGP')" title="Ir a Facebook de LaserGP"><i class="fab fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)" onclick="triggerRedirect('LinkedIn', 'https://linkedin.com/company/LaserGP')" title="Ir a LinkedIn de LaserGP"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" onclick="triggerRedirect('Instagram', 'https://instagram.com/LaserGP')" title="Ir a Instagram de LaserGP"><i class="fab fa-instagram"></i></a>
+                        <a href="javascript:void(0)" onclick="triggerRedirect('WhatsApp', 'https://wa.me/34912345678?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20limpieza%20por%20l%C3%A1ser.')" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Directorio</h4>
@@ -1135,16 +1311,106 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 GranalladoPro. Todos los derechos reservados.</p>
+                <p>&copy; 2026 LaserGP. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Modal de Redirección Inteligente -->
+    <div class="redirect-modal-overlay" id="redirectOverlay">
+        <div class="redirect-modal">
+            <div class="redirect-icon-container" id="redirectIconBg">
+                <i class="fab fa-whatsapp" id="redirectIcon" style="color: white;"></i>
+            </div>
+            <h3 class="redirect-title" id="redirectTitle">Redirigiendo...</h3>
+            <p class="redirect-text">
+                Estás saliendo de nuestra web informativa. Estableciendo conexión de forma segura con nuestro perfil oficial en <span id="redirectTargetName" style="font-weight: 700;"></span>.
+            </p>
+            <div class="redirect-progress">
+                <div class="redirect-bar" id="redirectProgressBar"></div>
+            </div>
+            <div class="redirect-buttons">
+                <button class="btn-cancel" onclick="cancelRedirect()">Volver</button>
+                <a href="#" class="btn-redirect-direct" id="directRedirectBtn" target="_blank" rel="noopener noreferrer">
+                    Ir directo <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // --- Redirection and Social Network Handling ---
+        let redirectProgressInterval = null;
+
+        function triggerRedirect(platformName, url) {
+            const overlay = document.getElementById('redirectOverlay');
+            const targetNameSpans = document.querySelectorAll('#redirectTargetName');
+            const redirectIcon = document.getElementById('redirectIcon');
+            const redirectIconBg = document.getElementById('redirectIconBg');
+            const progressBar = document.getElementById('redirectProgressBar');
+            const directBtn = document.getElementById('directRedirectBtn');
+            const title = document.getElementById('redirectTitle');
+
+            // Reset progress bar
+            progressBar.style.width = '0%';
+            
+            // Set name and classes
+            targetNameSpans.forEach(span => span.textContent = platformName);
+            title.textContent = `Conectando con ${platformName}...`;
+            directBtn.href = url;
+
+            // Configure icon based on platform
+            redirectIcon.className = '';
+            redirectIconBg.className = 'redirect-icon-container';
+            
+            if (platformName === 'WhatsApp') {
+                redirectIcon.className = 'fab fa-whatsapp';
+                redirectIconBg.style.backgroundColor = '#25D366';
+            } else if (platformName === 'Facebook') {
+                redirectIcon.className = 'fab fa-facebook-f';
+                redirectIconBg.style.backgroundColor = '#1877F2';
+            } else if (platformName === 'Instagram') {
+                redirectIcon.className = 'fab fa-instagram';
+                redirectIconBg.style.backgroundColor = '#d6249f';
+            } else if (platformName === 'LinkedIn') {
+                redirectIcon.className = 'fab fa-linkedin-in';
+                redirectIconBg.style.backgroundColor = '#0A66C2';
+            } else {
+                redirectIcon.className = 'fas fa-share-alt';
+                redirectIconBg.style.backgroundColor = 'var(--accent)';
+            }
+
+            // Show overlay
+            overlay.classList.add('active');
+
+            // Animate progress bar (lasts 1.5 seconds)
+            let progress = 0;
+            clearInterval(redirectProgressInterval);
+            redirectProgressInterval = setInterval(() => {
+                progress += 5;
+                progressBar.style.width = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(redirectProgressInterval);
+                    // Open URL in new window
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                    // Hide overlay after a slight delay
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                    }, 500);
+                }
+            }, 75);
+        }
+
+        function cancelRedirect() {
+            const overlay = document.getElementById('redirectOverlay');
+            overlay.classList.remove('active');
+            clearInterval(redirectProgressInterval);
+        }
+
         // --- Mobile Menu Toggle ---
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-
+        
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
@@ -1160,7 +1426,7 @@
 
         // --- Reveal on Scroll Animation ---
         const revealElements = document.querySelectorAll('.reveal');
-
+        
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1173,18 +1439,18 @@
 
         // --- FAQ Accordion Logic ---
         const faqQuestions = document.querySelectorAll('.faq-question');
-
+        
         faqQuestions.forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isActive = question.classList.contains('active');
-
+                
                 // Close all other answers
                 faqQuestions.forEach(q => {
                     q.classList.remove('active');
                     q.nextElementSibling.style.maxHeight = null;
                 });
-
+                
                 if (!isActive) {
                     question.classList.add('active');
                     answer.style.maxHeight = answer.scrollHeight + "px";
@@ -1198,7 +1464,7 @@
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-
+            
             let isValid = true;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const phoneRegex = /^[6789]\d{8}$/; // Spanish mobile/landline simplified
@@ -1225,7 +1491,7 @@
                 // Mimic success
                 form.style.display = 'none';
                 successBox.style.display = 'block';
-
+                
                 console.log('Form Submitted:', {
                     name: form.name.value,
                     email: form.email.value,
@@ -1244,5 +1510,5 @@
         }
     </script>
 </body>
-
 </html>
+

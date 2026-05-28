@@ -1,6 +1,6 @@
 {
   "name": "Granallado Profesional",
-  "description": "Servicio experto de granallado para la limpieza y restauración de superficies industriales y maquinaria.",
+  "description": "Servicio experto de limpieza láser con LaserGP para la eliminación de óxido, pintura y restauración de superficies industriales sin residuos.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
