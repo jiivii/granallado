@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Granallado Profesional | Restauración de Superficies</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -133,8 +134,8 @@
         /* --- Hero Section --- */
         #hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1541933224312-0548ca6bad8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1541933224312-0548ca6bad8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -355,8 +356,13 @@
             font-weight: 600;
         }
 
-        .label-antes { left: 10px; }
-        .label-despues { right: 10px; }
+        .label-antes {
+            left: 10px;
+        }
+
+        .label-despues {
+            right: 10px;
+        }
 
         /* --- Video Section --- */
         #video-servicio {
@@ -367,7 +373,8 @@
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
             height: 0;
             border-radius: 15px;
             overflow: hidden;
@@ -527,7 +534,9 @@
             font-size: 0.9rem;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 0.75rem;
             border: 1px solid #e2e8f0;
@@ -537,7 +546,9 @@
             transition: var(--transition);
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             outline: none;
             border-color: var(--accent);
             box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
@@ -630,14 +641,17 @@
 
         /* --- Responsive Queries --- */
         @media (max-width: 992px) {
-            .about-content, .contact-grid, .footer-content {
+
+            .about-content,
+            .contact-grid,
+            .footer-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .testimonial-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -670,7 +684,8 @@
                 gap: 3rem;
             }
 
-            .card-grid, .testimonial-grid {
+            .card-grid,
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -684,13 +699,15 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <div class="container">
             <nav>
                 <a href="#" class="logo">
-                    <i class="fas fa-tools"></i> GRANALLADO PRO
+                    <img src="media/logo.jpeg" alt="Granallado Pro" width="160" height="40" loading="lazy">
+                    <span class="sr-only">GRANALLADO PRO</span>
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#hero">Inicio</a></li>
@@ -714,7 +731,8 @@
         <section id="hero">
             <div class="container hero-content">
                 <h1 class="reveal">Limpieza y Restauración Industrial</h1>
-                <p class="reveal">Especialistas en granallado a domicilio: eliminación de óxido, residuos y preparación de superficies con tecnología de vanguardia.</p>
+                <p class="reveal">Especialistas en granallado a domicilio: eliminación de óxido, residuos y preparación
+                    de superficies con tecnología de vanguardia.</p>
                 <a href="#contacto" class="btn reveal">Solicitar Información</a>
             </div>
         </section>
@@ -726,15 +744,24 @@
                     <h2>Nuestra Solución Profesional</h2>
                     <p>Poder industrial aplicado a la recuperación de sus activos</p>
                 </div>
-                
+
                 <div class="about-content reveal">
                     <div class="about-text">
-                        <p>El granallado es la técnica de tratamiento superficial más eficiente para limpiar, fortalecer o pulir superficies metálicas. Mediante la proyección de partículas abrasivas a alta velocidad, logramos eliminar hasta el residuo más persistente sin comprometer la integridad de la pieza.</p>
-                        <p>Nuestro equipo a domicilio está perfectamente equipado para intervenir en maquinaria pesada, estructuras fijas y superficies de gran formato, garantizando un acabado anclaje perfecto para futuras capas de pintura o recubrimientos protectores.</p>
-                        <p>Nos adaptamos a las necesidades de su industria, minimizando los tiempos de inactividad con procesos rápidos, limpios y altamente controlados que cumplen con los estándares internacionales de preparación de superficies.</p>
+                        <p>El granallado es la técnica de tratamiento superficial más eficiente para limpiar, fortalecer
+                            o pulir superficies metálicas. Mediante la proyección de partículas abrasivas a alta
+                            velocidad, logramos eliminar hasta el residuo más persistente sin comprometer la integridad
+                            de la pieza.</p>
+                        <p>Nuestro equipo a domicilio está perfectamente equipado para intervenir en maquinaria pesada,
+                            estructuras fijas y superficies de gran formato, garantizando un acabado anclaje perfecto
+                            para futuras capas de pintura o recubrimientos protectores.</p>
+                        <p>Nos adaptamos a las necesidades de su industria, minimizando los tiempos de inactividad con
+                            procesos rápidos, limpios y altamente controlados que cumplen con los estándares
+                            internacionales de preparación de superficies.</p>
                     </div>
                     <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="Maquinaria Industrial" style="width:100%; border-radius:15px; box-shadow: var(--shadow-lg);">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
+                            alt="Maquinaria Industrial"
+                            style="width:100%; border-radius:15px; box-shadow: var(--shadow-lg);">
                     </div>
                 </div>
 
@@ -771,19 +798,22 @@
                         <div class="step-number">1</div>
                         <i class="fas fa-search"></i>
                         <h3>Análisis Tecnico</h3>
-                        <p>Evaluamos el tipo de superficie y el grado de contaminación para elegir el abrasivo ideal.</p>
+                        <p>Evaluamos el tipo de superficie y el grado de contaminación para elegir el abrasivo ideal.
+                        </p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <i class="fas fa-mask"></i>
                         <h3>Protección</h3>
-                        <p>Aislamos y protegemos las zonas delicadas y componentes mecánicos que no requieren tratamiento.</p>
+                        <p>Aislamos y protegemos las zonas delicadas y componentes mecánicos que no requieren
+                            tratamiento.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <i class="fas fa-wind"></i>
                         <h3>Granallado</h3>
-                        <p>Ejecutamos la proyección controlada hasta obtener el grado de limpieza solicitado (SA 2.5/3).</p>
+                        <p>Ejecutamos la proyección controlada hasta obtener el grado de limpieza solicitado (SA 2.5/3).
+                        </p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
@@ -808,11 +838,13 @@
                         <div class="comparison">
                             <div class="comparison-img">
                                 <span class="label label-antes">Antes</span>
-                                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=400&auto=format&fit=crop" alt="Antes">
+                                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=400&auto=format&fit=crop"
+                                    alt="Antes">
                             </div>
                             <div class="comparison-img">
                                 <span class="label label-despues">Después</span>
-                                <img src="https://images.unsplash.com/photo-1534398079244-67c8ad691acc?q=80&w=400&auto=format&fit=crop" alt="Despues">
+                                <img src="https://images.unsplash.com/photo-1534398079244-67c8ad691acc?q=80&w=400&auto=format&fit=crop"
+                                    alt="Despues">
                             </div>
                         </div>
                         <div style="padding:1rem; background: var(--bg-light); text-align:center;">
@@ -824,11 +856,13 @@
                         <div class="comparison">
                             <div class="comparison-img">
                                 <span class="label label-antes">Antes</span>
-                                <img src="https://images.unsplash.com/photo-1589793907316-f94025b46850?q=80&w=400&auto=format&fit=crop" alt="Antes">
+                                <img src="https://images.unsplash.com/photo-1589793907316-f94025b46850?q=80&w=400&auto=format&fit=crop"
+                                    alt="Antes">
                             </div>
                             <div class="comparison-img">
                                 <span class="label label-despues">Después</span>
-                                <img src="https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=400&auto=format&fit=crop" alt="Despues">
+                                <img src="https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=400&auto=format&fit=crop"
+                                    alt="Despues">
                             </div>
                         </div>
                         <div style="padding:1rem; background: var(--bg-light); text-align:center;">
@@ -840,11 +874,13 @@
                         <div class="comparison">
                             <div class="comparison-img">
                                 <span class="label label-antes">Antes</span>
-                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop" alt="Antes">
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop"
+                                    alt="Antes">
                             </div>
                             <div class="comparison-img">
                                 <span class="label label-despues">Después</span>
-                                <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400&auto=format&fit=crop" alt="Despues">
+                                <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400&auto=format&fit=crop"
+                                    alt="Despues">
                             </div>
                         </div>
                         <div style="padding:1rem; background: var(--bg-light); text-align:center;">
@@ -863,7 +899,8 @@
                     <p>Un vistazo rápido a nuestro equipo trabajando en campo</p>
                 </div>
                 <div class="video-container reveal">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Granallado" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Granallado"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -875,27 +912,33 @@
                     <h2>Opiniones de Clientes</h2>
                     <p>La confianza de la industria nos avala</p>
                 </div>
-                
+
                 <div class="testimonial-grid">
                     <div class="testimonial-card reveal">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Increíble rapidez. Teníamos una flota de camiones con mucho óxido y en 48 horas el equipo de Granallado Pro los dejó como nuevos."</p>
+                        <p class="testimonial-text">"Increíble rapidez. Teníamos una flota de camiones con mucho óxido y
+                            en 48 horas el equipo de Granallado Pro los dejó como nuevos."</p>
                         <p class="testimonial-author">Ing. Manuel Torres</p>
                     </div>
                     <div class="testimonial-card reveal">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"La limpieza SA 3 que lograron en nuestros tanques de almacenamiento fue perfecta. La pintura posterior se adhirió sin problemas."</p>
+                        <p class="testimonial-text">"La limpieza SA 3 que lograron en nuestros tanques de almacenamiento
+                            fue perfecta. La pintura posterior se adhirió sin problemas."</p>
                         <p class="testimonial-author">Lucía García - Gerente de Planta</p>
                     </div>
                     <div class="testimonial-card reveal">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         </div>
-                        <p class="testimonial-text">"Profesionalidad absoluta. No ensucian nada del entorno gracias a sus sistemas de aspiración. Muy recomendables para naves industriales."</p>
+                        <p class="testimonial-text">"Profesionalidad absoluta. No ensucian nada del entorno gracias a
+                            sus sistemas de aspiración. Muy recomendables para naves industriales."</p>
                         <p class="testimonial-author">Roberto Méndez</p>
                     </div>
                 </div>
@@ -917,7 +960,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Principalmente metales (hierro, acero, aluminio), pero también podemos tratar hormigón para abrir el poro o madera para efectos rústicos, adaptando siempre la presión y el tipo de granalla.</p>
+                            <p>Principalmente metales (hierro, acero, aluminio), pero también podemos tratar hormigón
+                                para abrir el poro o madera para efectos rústicos, adaptando siempre la presión y el
+                                tipo de granalla.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -926,7 +971,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>El granallado elimina micras de material (óxido, pintura, cascarilla de laminación). No altera las dimensiones críticas de la maquinaria, aunque en piezas de precisión extrema protegemos las tolerancias mecánicas.</p>
+                            <p>El granallado elimina micras de material (óxido, pintura, cascarilla de laminación). No
+                                altera las dimensiones críticas de la maquinaria, aunque en piezas de precisión extrema
+                                protegemos las tolerancias mecánicas.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -935,7 +982,8 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Depende de la superficie y del estado inicial. Una superficie medianamente oxidada de 50m² puede estar lista en una jornada de trabajo completa.</p>
+                            <p>Depende de la superficie y del estado inicial. Una superficie medianamente oxidada de
+                                50m² puede estar lista en una jornada de trabajo completa.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -944,7 +992,8 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Utilizamos equipos de aspiración de polvo integrados y sistemas de confinamiento portátiles que minimizan la dispersión de residuos en su planta.</p>
+                            <p>Utilizamos equipos de aspiración de polvo integrados y sistemas de confinamiento
+                                portátiles que minimizan la dispersión de residuos en su planta.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -953,7 +1002,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Sí, es un servicio ideal para exteriores siempre que las condiciones climáticas (viento excesivo o lluvia) permitan trabajar con seguridad y sin humedecer el metal recién limpiado.</p>
+                            <p>Sí, es un servicio ideal para exteriores siempre que las condiciones climáticas (viento
+                                excesivo o lluvia) permitan trabajar con seguridad y sin humedecer el metal recién
+                                limpiado.</p>
                         </div>
                     </div>
                 </div>
@@ -992,7 +1043,7 @@
                                 <p>info@granalladopro.es</p>
                             </div>
                         </div>
-                        
+
                         <div class="social-links" style="margin-top: 3rem;">
                             <a href="#"><i class="fab fa-facebook"></i></a>
                             <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -1007,7 +1058,7 @@
                                 <input type="text" id="name" name="name" required>
                                 <span class="error-message">Este campo es obligatorio</span>
                             </div>
-                            
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="phone">Teléfono *</label>
@@ -1040,13 +1091,15 @@
 
                             <div class="form-group">
                                 <label for="message">Detalle su proyecto *</label>
-                                <textarea id="message" name="message" rows="4" required placeholder="Describa el tipo de superficie, tamaño aproximado..."></textarea>
+                                <textarea id="message" name="message" rows="4" required
+                                    placeholder="Describa el tipo de superficie, tamaño aproximado..."></textarea>
                             </div>
 
                             <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
                         </form>
                         <div class="success-message" id="successBox">
-                            <i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Nos pondremos en contacto con usted en menos de 24h.
+                            <i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Nos pondremos en contacto
+                            con usted en menos de 24h.
                         </div>
                     </div>
                 </div>
@@ -1059,7 +1112,8 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3 class="footer-logo"><i class="fas fa-tools"></i> GRANALLADO PRO</h3>
-                    <p>Expertos en tratamiento de superficies industriales con más de 15 años de experiencia en el sector. Compromiso, calidad y rapidez.</p>
+                    <p>Expertos en tratamiento de superficies industriales con más de 15 años de experiencia en el
+                        sector. Compromiso, calidad y rapidez.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Directorio</h4>
@@ -1090,7 +1144,7 @@
         // --- Mobile Menu Toggle ---
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        
+
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
@@ -1106,7 +1160,7 @@
 
         // --- Reveal on Scroll Animation ---
         const revealElements = document.querySelectorAll('.reveal');
-        
+
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1119,18 +1173,18 @@
 
         // --- FAQ Accordion Logic ---
         const faqQuestions = document.querySelectorAll('.faq-question');
-        
+
         faqQuestions.forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isActive = question.classList.contains('active');
-                
+
                 // Close all other answers
                 faqQuestions.forEach(q => {
                     q.classList.remove('active');
                     q.nextElementSibling.style.maxHeight = null;
                 });
-                
+
                 if (!isActive) {
                     question.classList.add('active');
                     answer.style.maxHeight = answer.scrollHeight + "px";
@@ -1144,7 +1198,7 @@
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             let isValid = true;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const phoneRegex = /^[6789]\d{8}$/; // Spanish mobile/landline simplified
@@ -1171,7 +1225,7 @@
                 // Mimic success
                 form.style.display = 'none';
                 successBox.style.display = 'block';
-                
+
                 console.log('Form Submitted:', {
                     name: form.name.value,
                     email: form.email.value,
@@ -1190,5 +1244,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>
